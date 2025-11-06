@@ -1,19 +1,21 @@
-const fechaEvento = new Date("Dec 20, 2025 22:00:00").getTime();
-const countdown = document.getElementById("countdown");
+window.addEventListener('load', () => {
+  const overlay = document.getElementById('overlay');
+  setTimeout(() => { overlay.style.display = 'none'; }, 5000);
+});
 
-const timer = setInterval(() => {
-  const ahora = new Date().getTime();
-  const diferencia = fechaEvento - ahora;
+const countdown = () => {
+  const countDate = new Date("December 15, 2025 21:00:00").getTime();
+  const now = new Date().getTime();
+  const gap = countDate - now;
 
-  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+  const second = 1000; const minute = second * 60;
+  const hour = minute * 60; const day = hour * 24;
 
-  countdown.innerHTML = `⏳ Faltan: ${dias}d ${horas}h ${minutos}m ${segundos}s`;
+  const d = Math.floor(gap / day);
+  const h = Math.floor((gap % day) / hour);
+  const m = Math.floor((gap % hour) / minute);
+  const s = Math.floor((gap % minute) / second);
 
-  if (diferencia < 0) {
-    clearInterval(timer);
-    countdown.innerHTML = "🎉 ¡La fiesta ha comenzado!";
-  }
-}, 1000);
+  document.getElementById('contador').innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+};
+setInterval(countdown, 1000);
