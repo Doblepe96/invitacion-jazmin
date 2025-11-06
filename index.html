@@ -2,37 +2,45 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mis 15 años - Jazmín</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación 15 años - Jazmín</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6a4f6169e9.mp3" type="audio/mpeg">
-  </audio>
-
-  <div class="butterflies">
-    <div class="butterfly"></div>
-    <div class="butterfly"></div>
-    <div class="butterfly"></div>
+  <div id="overlay">
+    <img src="img/moño.png" alt="Moño" class="bow">
+    <div class="scroll-pergamin">
+      <img src="img/pergamino.png" alt="Pergamino">
+    </div>
   </div>
 
-  <div class="scroll-container">
-    <div class="scroll">
-      <h1>🦋 Mis 15 años 🦋</h1>
-      <p>El tiempo vuela y una nueva etapa comienza...<br>
-      Con alegría y emoción te invito a celebrar conmigo una noche única e inolvidable.</p>
+  <div id="content">
+    <section class="portada">
+      <div class="texto-portada">
+        <h1>MIS 15 AÑOS</h1>
+        <h2>JAZMÍN</h2>
+      </div>
+      <div class="foto-portada">
+        <img src="img/foto-jazmin.jpg" alt="Jazmín">
+      </div>
+    </section>
 
-      <h2>📍 Lugar: Salón “Susana” – Pedro Ferré 2263</h2>
-      <h2>📅 Fecha: Sábado 20 de diciembre de 2025</h2>
-      <h2>🕘 Hora: 22:00 hs</h2>
+    <section class="frase">
+      <p>Comienzo una nueva etapa llena de sueños, alegría y momentos inolvidables.</p>
+    </section>
 
-      <div class="countdown" id="countdown"></div>
+    <section class="info">
+      <p><strong>Fecha:</strong> 15 de diciembre 2025</p>
+      <p><strong>Hora:</strong> 21 hs</p>
+      <p><strong>Lugar:</strong> Castillo</p>
+      <p><strong>Vestimenta:</strong> Elegante Sport</p>
+    </section>
 
-      <p>👗 Dress code: Elegante Sport</p>
-
-      <a href="https://wa.me/541161610509?text=Confirmo%20mi%20asistencia%20a%20los%2015%20de%20Jazmín%20💜🦋" class="btn">Confirmar asistencia</a>
-    </div>
+    <section class="invitacion-final">
+      <p>Los espero para compartir esta noche especial</p>
+      <div id="contador"></div>
+      <a href="https://wa.me/1161619509?text=Hola! Confirmo mi asistencia al cumple de Jazmín 😊" class="btn-whatsapp" target="_blank">Confirmar asistencia</a>
+    </section>
   </div>
 
   <script src="script.js"></script>
