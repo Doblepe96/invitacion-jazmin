@@ -1,5 +1,4 @@
-// Cuenta regresiva
-const fechaEvento = new Date("Dec 15, 2025 21:00:00").getTime();
+const fechaEvento = new Date("Dec 20, 2025 22:00:00").getTime();
 const countdown = document.getElementById("countdown");
 
 const timer = setInterval(() => {
