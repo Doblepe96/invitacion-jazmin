@@ -1,26 +1,38 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body, html { font-family: 'Arial', sans-serif; background: #fdf6e3; overflow-x: hidden; }
+* {margin:0; padding:0; box-sizing:border-box;}
+body, html {font-family:'Arial',sans-serif; background:#fdf6e3; overflow-x:hidden; scroll-behavior:smooth;}
 
-#overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 999; background: #fdf6e3; animation: fadeOut 1s forwards; animation-delay: 3s; }
-.scroll-pergamin img { width: 80%; max-width: 400px; animation: desplegar 2s forwards; }
-.bow { width: 100px; margin-bottom: 20px; animation: aparecerMoño 2s forwards; }
+/* Overlay pergamino */
+#overlay {position: fixed; top:0; left:0; width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:999; background:#fdf6e3;}
+.scroll-pergamin img {width:80%; max-width:600px; animation:desplegar 2s forwards;}
+.bow {width:100px; margin-bottom:20px; animation:aparecerMoño 2s forwards;}
+@keyframes aparecerMoño {0% {opacity:0; transform:scale(0.5);} 100% {opacity:1; transform:scale(1);}}
+@keyframes desplegar {0% {transform:scaleY(0);} 100% {transform:scaleY(1);}}
 
-@keyframes aparecerMoño { 0% { opacity: 0; transform: scale(0.5);} 100% { opacity: 1; transform: scale(1); } }
-@keyframes desplegar { 0% { transform: scaleY(0);} 100% { transform: scaleY(1); } }
-@keyframes fadeOut { 0% { opacity: 1;} 100% { opacity: 0; display: none;} }
+/* Contenido */
+#content {opacity:0; animation:fadeInContent 1s forwards; animation-delay:5s; background:url('img/pergamino.png') no-repeat center top; background-size:cover; padding:20px;}
+@keyframes fadeInContent {to {opacity:1;}}
 
-#content { opacity: 0; animation: fadeInContent 1s forwards; animation-delay: 5s; padding: 20px; }
-@keyframes fadeInContent { to { opacity: 1; } }
+/* Secciones con marco */
+.section {margin:30px auto; padding:20px; max-width:600px; text-align:center; border-radius:15px; opacity:0; transform:translateY(30px); transition: all 0.8s ease;}
+.marco {border:3px solid #8B4513; background:rgba(255,255,255,0.85); box-shadow:0 8px 15px rgba(0,0,0,0.3);}
+.section.visible {opacity:1; transform:translateY(0);}
 
-.portada { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 30px; }
-.texto-portada h1 { font-size: 2.5rem; color: #8B4513; }
-.texto-portada h2 { font-size: 2rem; color: #A0522D; margin-top: 10px; }
-.foto-portada img { width: 200px; height: 200px; border-radius: 50%; margin-top: 20px; object-fit: cover; }
+/* Portada */
+.texto-portada h1 {font-size:2.5rem; color:#8B4513;}
+.texto-portada h2 {font-size:2rem; color:#A0522D; margin-top:10px;}
+.foto-portada img {width:200px; height:200px; border-radius:50%; margin-top:20px; object-fit:cover;}
 
-.frase { margin: 20px 0; text-align: center; font-size: 1.2rem; color: #6B4226; padding: 0 10px; }
-.info { background: #fff5e6; padding: 15px; border-radius: 10px; margin-bottom: 30px; font-size: 1rem; color: #5C3A21; }
-.invitacion-final { text-align: center; margin-bottom: 50px; }
-#contador { font-size: 1.5rem; color: #8B4513; margin: 15px 0; }
-.btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; }
+/* Frase e info */
+.frase p {font-size:1.2rem; color:#6B4226;}
+.info p {font-size:1rem; color:#5C3A21;}
 
-@media (min-width: 600px) { .portada { flex-direction: row; justify-content: center; gap: 40px; } .texto-portada { text-align: left; } }
+/* Invitación final */
+.invitacion-final #contador {font-size:1.5rem; color:#8B4513; margin:15px 0;}
+.btn-whatsapp {display:inline-block; background:#25D366; color:white; padding:12px 20px; border-radius:25px; text-decoration:none; font-weight:bold; transition: transform 0.3s ease;}
+.btn-whatsapp:hover {transform:scale(1.05);}
+
+/* Responsive */
+@media(min-width:800px){
+  .section{max-width:700px;}
+  .portada{display:flex; justify-content:center; gap:40px; text-align:left;}
+}
